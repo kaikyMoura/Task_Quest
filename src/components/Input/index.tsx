@@ -1,6 +1,6 @@
-import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid';
 import { useState } from 'react';
 import styles from './styles.module.scss';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 interface InputProps {
     onClick?: Function | any;
@@ -17,7 +17,7 @@ const Input = ({ onClick, onChange, type, label, placeholder, value, maxLength, 
     const [changeIcon, setChangeIcon] = useState(false)
     const [showPassword, setShowPassword] = useState(false)
     let icon
-    type == "password" ? icon = <EyeIcon /> : null
+    type == "password" ? icon = <FaEye /> : null
 
     const handleIconChange = (event: { preventDefault: () => void; }) => {
         event.preventDefault()
@@ -45,7 +45,7 @@ const Input = ({ onClick, onChange, type, label, placeholder, value, maxLength, 
                             </button>
                             :
                             <button className='' onClick={handleIconChange}>
-                                <i>{icon = <EyeSlashIcon className='' />}</i>
+                                <i>{icon = <FaEyeSlash className='' />}</i>
                             </button>
                         }
                     </>
