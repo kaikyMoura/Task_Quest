@@ -1,5 +1,5 @@
-import Loading from "@/utils/Loading";
-import React, { createContext, ReactNode, SetStateAction, Dispatch, useState, useContext } from "react";
+import Loader from "@/utils/Loader";
+import React, { createContext, Dispatch, ReactNode, SetStateAction, useContext, useState } from "react";
 
 interface LoadingContextProps {
     isLoading: boolean | false,
@@ -14,7 +14,7 @@ export const LoadingProvider: React.FC<{ children: ReactNode }> = ({ children })
     return (
         <LoadingContext.Provider value={{ isLoading, setLoading }}>
             {children}
-            {isLoading && <Loading />}
+            {isLoading && <Loader />}
         </LoadingContext.Provider>
     );
 };

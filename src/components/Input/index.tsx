@@ -17,7 +17,7 @@ const Input = ({ onClick, onChange, type, label, placeholder, value, maxLength, 
     const [changeIcon, setChangeIcon] = useState(false)
     const [showPassword, setShowPassword] = useState(false)
     let icon
-    type == "password" ? icon = <FaEye /> : null
+    type == "password" ? icon = <FaEye fontSize={22} /> : null
 
     const handleIconChange = (event: { preventDefault: () => void; }) => {
         event.preventDefault()
@@ -44,8 +44,8 @@ const Input = ({ onClick, onChange, type, label, placeholder, value, maxLength, 
                                 <i>{icon}</i>
                             </button>
                             :
-                            <button className='' onClick={handleIconChange}>
-                                <i>{icon = <FaEyeSlash className='' />}</i>
+                            <button className='mr-2' onClick={handleIconChange}>
+                                <i>{icon = <FaEyeSlash fontSize={22}/>}</i>
                             </button>
                         }
                     </>

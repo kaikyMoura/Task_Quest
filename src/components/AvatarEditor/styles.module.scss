@@ -11,12 +11,13 @@
 @media (max-width: 768px) {
     .container {
         display: flex;
-        margin-top: -10% !important;
+        margin-top: -20% !important;
         justify-content: space-between;
     }
     .selector {
-        display: flex;
+        margin-top: -24% !important;
         flex-direction: column;
+        transform: scale(0.8);
         gap: 9px;
     }
  }

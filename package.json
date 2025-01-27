@@ -11,7 +11,9 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
-    "framer-motion": "^11.18.1",
+    "axios": "^1.7.9",
+    "framer-motion": "^11.18.2",
+    "js-cookie": "^3.0.5",
     "next": "15.1.4",
     "react": "^19.0.0",
     "react-color": "^2.19.3",
@@ -21,10 +23,12 @@
     "react-tooltip": "^5.28.0",
     "sass": "^1.83.4",
     "scss": "^0.2.4",
+    "uuid": "^11.0.5",
     "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^22.10.7",
     "@types/react": "^19.0.7",
     "@types/react-color": "^3.0.13",
