@@ -1,4 +1,4 @@
-import { useLoadingContext } from "@/contexts/LoadingProvider";
+import { useLoadingContext } from "@/contexts/LoadingContextProvider";
 import { useEffect, useRef, useState } from "react";
 import { ChromePicker } from 'react-color';
 import { FaShuffle } from "react-icons/fa6";

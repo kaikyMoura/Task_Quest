@@ -29,7 +29,6 @@
     }
 }
 
-
 .sidemenu li:hover {
     border-radius: 36px;
     padding: 10px;
@@ -39,6 +38,8 @@
 }
 
 .selected {
+    border-radius: 36px;
+    padding: 10px;
     background-color: #cc0202;
     color: white;
     width: 100%;

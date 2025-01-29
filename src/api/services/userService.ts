@@ -2,8 +2,8 @@ import { ApiResponse } from "@/model/ApiResponse";
 import { ErrorResponse } from "@/model/ErrorReponse";
 import { User } from "@/model/User";
 import axios, { AxiosError } from "axios";
-import api from "..";
 import Cookies from "js-cookie";
+import api from "..";
 
 export const createUser = async (user: User): Promise<ApiResponse<unknown>> => {
     console.log(user)
@@ -30,7 +30,6 @@ export const createUser = async (user: User): Promise<ApiResponse<unknown>> => {
 }
 
 export const login = async (user: User): Promise<ApiResponse<unknown>> => {
-    console.log(user)
     try {
         const response = await api.post('/user/login', user)
         const token = response.data.token

@@ -3,7 +3,7 @@ import AvatarEditor from "@/components/AvatarEditor";
 import Button from "@/components/Button";
 import Card from "@/components/Card";
 import Input from "@/components/Input";
-import { useLoadingContext } from "@/contexts/LoadingProvider";
+import { useLoadingContext } from "@/contexts/LoadingContextProvider";
 import { User } from "@/model/User";
 import Link from "next/link";
 import { SetStateAction, useEffect, useState } from "react";

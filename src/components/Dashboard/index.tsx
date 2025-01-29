@@ -1,4 +1,4 @@
-import { FaHome, FaThList, FaCalendarAlt } from "react-icons/fa"
+import { FaCalendarAlt, FaHome, FaThList } from "react-icons/fa"
 import { FaGear } from "react-icons/fa6"
 import { IoPersonCircle } from "react-icons/io5"
 import SideMenu from "../SideMenu"
@@ -7,7 +7,7 @@ const DashBoard = (props: {
     children: React.ReactNode
 }) => {
 
-    return (
+     return (
         <div>
             <SideMenu items={[{ name: "Dashboard", link: "/home", icon: <FaHome fontSize={28} />, tooltip: "Home" },
             { name: "My Tasks", link: "/tasks", icon: <FaThList fontSize={28} />, tooltip: "My tasks" },

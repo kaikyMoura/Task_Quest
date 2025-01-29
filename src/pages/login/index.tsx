@@ -2,16 +2,18 @@ import { login } from "@/api/services/userService"
 import Button from "@/components/Button"
 import Card from "@/components/Card"
 import Input from "@/components/Input"
-import { useLoadingContext } from "@/contexts/LoadingProvider"
+import { useLoadingContext } from "@/contexts/LoadingContextProvider"
 import { User } from "@/model/User"
 import { useRouter } from "next/router"
 import { SetStateAction, useState } from "react"
 import { FaTrophy } from "react-icons/fa6"
 import styles from "./styles.module.scss"
+import { useAuthContext } from "@/contexts/AuthContextProvider"
 
 const Login = () => {
     const router = useRouter()
     const { setLoading } = useLoadingContext()
+    const { setIsAuthenticated } = useAuthContext()
 
     const [email, setEmail] = useState('')
     const [userPassword, setUserPassword] = useState('')

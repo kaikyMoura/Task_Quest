@@ -20,7 +20,7 @@ const SideMenu = (props: {
                         {props.items && props.items.map((item, index) => (
                             <React.Fragment key={index}>
 
-                                <li className={`cursor-pointer ${router.pathname == item.link ? styles.selected : ""}`}>
+                                <li className={`cursor-pointer ${router.pathname == item.link ? styles.selected : "" }`}>
                                     <Link className={`flex ${styles.item}`} href={item.link}
                                         data-tooltip-id="my-tooltip"
                                         data-tooltip-content={item.tooltip}>
