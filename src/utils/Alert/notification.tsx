@@ -1,11 +1,10 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { MouseEventHandler, useEffect } from "react";
 import styles from "./notification.module.css";
-import { faX } from "@fortawesome/free-solid-svg-icons";
-import { useEffect } from "react";
+import { FaX } from "react-icons/fa6";
 
 interface AlertProps {
     type: "error" | "sucess" | "notification",
-    Close?: Function | any,
+    Close?: MouseEventHandler<HTMLButtonElement> | undefined,
     title: string,
     image?: string
     text: string | undefined
@@ -33,7 +32,7 @@ const Alert = ({ Close, title, type, text, action }: AlertProps) => {
     return (
         <>
             <div className={`${styles.modalBlur}`} style={{ borderColor: color }} onClick={(e) => e.stopPropagation()}>
-                <button onClick={Close}><FontAwesomeIcon icon={faX} color={"black"} height={20} /></button>
+                <button onClick={Close}><FaX color={"black"} fontSize={26} /></button>
                 <div>
                     <h2 className="text-lg" style={{ color: color }}>{title}</h2>
                     <div className="flex items-center justify-center">

@@ -8,7 +8,7 @@ import IconWrapper from "./IconWrapper";
 import styles from "./styles.module.scss";
 
 
-const AvatarEditor = (props: { avatarConfig: NiceAvatarProps, updateConfig: (type: string, value: any) => void }) => {
+const AvatarEditor = (props: { avatarConfig: NiceAvatarProps, updateConfig: (type: string, value: string | boolean | undefined) => void }) => {
     const { setLoading } = useLoadingContext()
 
     const [showPicker, setShowPicker] = useState(false);
@@ -23,7 +23,7 @@ const AvatarEditor = (props: { avatarConfig: NiceAvatarProps, updateConfig: (typ
         setLoading(false)
         setIsMounted(true);
         avatarConfigRef.current = props.avatarConfig
-    }, [isMounted, props.avatarConfig, props.updateConfig]);
+    }, [isMounted, props.avatarConfig, props.updateConfig, setLoading]);
 
     if (!isMounted) {
         setLoading(true)
@@ -32,9 +32,9 @@ const AvatarEditor = (props: { avatarConfig: NiceAvatarProps, updateConfig: (typ
 
     function switchConfig(
         type: string,
-        currentOpt: any,
-        defaultOptions: Record<string, any[]>,
-        updateConfig: (type: string, value: any) => void
+        currentOpt: string | undefined,
+        defaultOptions: Record<string, string[]>,
+        updateConfig: (type: string, value: string | boolean | undefined) => void
     ) {
         const opts = defaultOptions[type];
         if (!opts || !Array.isArray(opts) || opts.length === 0) {

@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import styles from './styles.module.scss';
+import { ChangeEventHandler, MouseEventHandler, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import styles from './styles.module.scss';
 
 interface InputProps {
-    onClick?: Function | any;
-    onChange?: Function | any;
+    onClick?: MouseEventHandler<HTMLInputElement> | undefined;
+    onChange?: ChangeEventHandler<HTMLInputElement> | undefined;
     label?: string;
-    value?: string | any;
+    value?: string | undefined;
     placeholder: string;
     type: "text" | "password" | "email" | "number" | "file";
     maxLength?: number;
@@ -16,8 +16,13 @@ interface InputProps {
 const Input = ({ onClick, onChange, type, label, placeholder, value, maxLength, accept }: InputProps) => {
     const [changeIcon, setChangeIcon] = useState(false)
     const [showPassword, setShowPassword] = useState(false)
+    
     let icon
-    type == "password" ? icon = <FaEye fontSize={22} /> : null
+    if (type === "password") {
+        icon = <FaEye fontSize={22} />;
+    } else {
+        icon = null;
+    }
 
     const handleIconChange = (event: { preventDefault: () => void; }) => {
         event.preventDefault()
@@ -45,7 +50,7 @@ const Input = ({ onClick, onChange, type, label, placeholder, value, maxLength, 
                             </button>
                             :
                             <button className='mr-2' onClick={handleIconChange}>
-                                <i>{icon = <FaEyeSlash fontSize={22}/>}</i>
+                                <i>{icon = <FaEyeSlash fontSize={22} />}</i>
                             </button>
                         }
                     </>

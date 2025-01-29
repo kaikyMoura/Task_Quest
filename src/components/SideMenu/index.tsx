@@ -1,16 +1,12 @@
-import { useRouter } from 'next/router'
-import { FaCalendarAlt, FaHome, FaThList } from 'react-icons/fa'
-import { FaGear } from 'react-icons/fa6'
-import { IoPersonCircle, IoPersonCircleOutline } from 'react-icons/io5'
-import styles from './styles.module.scss'
 import Link from 'next/link'
-import { Tooltip } from 'react-tooltip'
-import React from 'react'
+import { useRouter } from 'next/router'
+import React, { ReactNode } from 'react'
+import styles from './styles.module.scss'
 
 const SideMenu = (props: {
     items: {
-        name: string, link: string, icon: any, tooltip?: string,
-        subMenuItems?: { name: string, link: string, icon: any, tooltip?: string }[]
+        name: string, link: string, icon: ReactNode, tooltip?: string,
+        subMenuItems?: { name: string, link: string, icon: ReactNode, tooltip?: string }[]
     }[],
 }) => {
     const router = useRouter()

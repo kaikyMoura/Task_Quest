@@ -3,7 +3,7 @@ import { Task } from "./Task";
 
 export type User = {
     id?: number;
-    user_name: string;
+    user_name?: string;
     email?: string;
     user_password?: string;
     createdAt?: Date;
